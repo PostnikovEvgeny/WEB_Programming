@@ -48,3 +48,26 @@ if ( isset($data['do_signup']) )
 }
 ?>
 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Авторизация </title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+    <div class="login-page">
+  <div class="form">
+    <form class="register-form" action="/signup.php" method="POST">
+      <input type="text" placeholder="Логин" name="login" value="<?php echo @$data['login']; ?>"/>
+      <input type="password" placeholder="Пароль" name="password" value="<?php echo @$data['password']; ?>"/>
+      <input type="text" placeholder="Почтовый адрес" name="email" value="<?php echo @$data['email']; ?>"/>
+      <button type="submit" name="do_signup">Регистрация</button>
+      </form>
+  </div>
+</div>
+</body>
+</html>
