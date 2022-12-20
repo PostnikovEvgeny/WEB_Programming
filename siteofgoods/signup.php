@@ -20,7 +20,21 @@ if ( isset($data['do_signup']) )
     {
         $errors[] = 'Введите пароль!';
     }
+
+    if ( R::count('users', "login = ?", array($data['login'])) > 0)
+    {
+        $errors[] = 'Пользователь с таким логином уже существует!';
+    }
+ 
+    if ( R::count('users', "email = ?", array($data['email'])) > 0)
+    {
+        $errors[] = 'Пользователь с таким Email уже существует!';
+    }
+
+
  
 }
 ?>
+
+
 
