@@ -86,7 +86,16 @@ $products = get_products();
 </div>
 
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
+
+
+<footer class="container">
+    	<p class="float-end"><a href="#">Вернуться к началу</a></p>
+    	<p>2022 Рис-21-1б ПКМ.</p>
+  </footer>
 
 
 </ul>
