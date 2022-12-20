@@ -31,10 +31,20 @@ if ( isset($data['do_signup']) )
         $errors[] = 'Пользователь с таким Email уже существует!';
     }
 
-
+ 
+    if ( empty($errors) )
+    {
+        $user = R::dispense('users');
+        $user->login = $data['login'];
+        $user->email = $data['email'];
+        $user->password = password_hash($data['password'], PASSWORD_DEFAULT); 
+        R::store($user);
+        echo '<div style="color:white; font-size:40px">Вы успешно зарегистрированы!</div>';
+    }else
+    {
+        echo '<div id="errors" style="color:white; font-size:40px">' .array_shift($errors). '</div>';
+    }
  
 }
 ?>
-
-
 
