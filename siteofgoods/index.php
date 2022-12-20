@@ -17,8 +17,7 @@ $products = get_products();
 
 </head>
 <body>
-
-    <header>
+<header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Магазин продуктов</a>
@@ -42,7 +41,31 @@ $products = get_products();
   </nav>
 
 
+
 </header>
-        
+        <div class ="d-flex flex-wrap">
+         
+        <?php if (!empty($products)): ?>
+         <?php foreach($products as $product):?>
+
+        <div class="card mb-4 rounded-3 shadow-sm mt-5">
+          <div class="card-header py-3">
+            <h2><?php echo $product['name']?></h2>
+          </div>
+            <div class="card-body">
+              <img src="img/<?php echo $product['image'] ?>" class="img-thumbnail">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <h4><?php echo "<li>".$product['price']." ₽/кг</li>"?></h4>
+                </ul>
+              <a href="?cart=add&id=<?= $product['id'] ?>" class="btn w-100 btn btn-lg   btn-outline-primary add-to-cart" data-id="<?= $product['id'] ?>">В корзину</a>
+            </div>
+        </div>
+
+
+          <?php endforeach; ?>
+        <? endif; ?>
+    </div>
+
+</ul>
 </body>
 </html>
