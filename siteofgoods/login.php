@@ -12,10 +12,17 @@ if ( isset($data['do_login']) )
         {
             $_SESSION['logged_user'] = $user;
             header('Location: /index.php');
+        }else
+        {
+            $errors[] = 'Неверно введен пароль!';
         }
  
+    }else
+    {
+        $errors[] = 'Пользователь с таким логином не найден!';
     }
- 
+     
+    
  
 }
 ?>
