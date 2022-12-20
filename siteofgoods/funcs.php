@@ -13,6 +13,13 @@ function get_products(): array
 	return $res->fetchAll();
 }
 
+function get_product(int $id): array
+{
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM products WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch();
+}
 
 
 ?>
