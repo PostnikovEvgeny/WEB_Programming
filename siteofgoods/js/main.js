@@ -48,6 +48,19 @@ $('#get-cart').on('click', function (e) {
         });
     });
 
+ $('#cart-modal .modal-cart-content').on('click', '#clear-cart', function () {
+        $.ajax({
+            url: 'cart.php',
+            type: 'GET',
+            data: {cart: 'clear'},
+            success: function (res) {
+                showCart(res);
+            },
+            error: function () {
+                alert('Error');
+            }
+        });
+    });
 
 
 });
