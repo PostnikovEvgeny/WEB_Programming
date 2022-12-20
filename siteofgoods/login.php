@@ -22,7 +22,10 @@ if ( isset($data['do_login']) )
         $errors[] = 'Пользователь с таким логином не найден!';
     }
      
-    
+    if ( ! empty($errors) )
+    {
+        echo '<div id="errors" style="color:white; font-size:40px">' .array_shift($errors). '</div>';
+    }
  
 }
 ?>
