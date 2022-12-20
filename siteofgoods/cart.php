@@ -22,6 +22,9 @@ if (isset($_GET['cart'])) {
             }
             break;
 
-       
+        case 'show':
+
+            require __DIR__ . '/cart-modal.php';
+            break;
     }
 }
